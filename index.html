@@ -15,6 +15,9 @@
         h1 {
             margin-bottom: 20px;
         }
+        .dropdown-container {
+            margin-bottom: 20px;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -46,6 +49,13 @@
 </head>
 <body>
     <h1>Select Your Play</h1>
+    <div class="dropdown-container">
+        <label for="player-select">Select Player: </label>
+        <select id="player-select">
+            <option value="Tyler">Tyler</option>
+            <option value="Evan">Evan</option>
+        </select>
+    </div>
     <div class="grid-container">
         <button class="grid-item" onclick="selectPlay('Chinese Left', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseLeft.JPG')">
             <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseLeft.JPG" alt="Chinese Left">
@@ -81,8 +91,9 @@
 
     <script>
         function selectPlay(playName, imageUrl) {
+            const playerName = document.getElementById('player-select').value;
             const payload = {
-                content: `Play selected: ${playName}`,
+                content: `${playerName} selected: ${playName}`,
                 embeds: [{
                     title: playName,
                     image: {
