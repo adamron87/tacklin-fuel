@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Selection</title>
+</head>
+<body>
+    <h1>Select Your Play</h1>
+    <button onclick="selectPlay('Play 1')">Play 1</button>
+    <button onclick="selectPlay('Play 2')">Play 2</button>
+    <button onclick="selectPlay('Play 3')">Play 3</button>
+
+    <script>
+        function selectPlay(playName) {
+            fetch('https://your-discord-webhook-url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ content: `Play selected: ${playName}` }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
