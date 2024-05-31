@@ -47,53 +47,45 @@
 <body>
     <h1>Select Your Play</h1>
     <div class="grid-container">
-        <button class="grid-item" onclick="selectPlay('Chinese Left', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseLeft.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseLeft.JPG" alt="Chinese Left">
+        <button class="grid-item" onclick="selectPlay('Chinese Left')">
+            Chinese Left
         </button>
-        <button class="grid-item" onclick="selectPlay('Chinese Right', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseRight.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/ChineseRight.JPG" alt="Chinese Right">
+        <button class="grid-item" onclick="selectPlay('Chinese Right')">
+            Chinese Right
         </button>
-        <button class="grid-item" onclick="selectPlay('Curl Left', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlLeft.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlLeft.JPG" alt="Curl Left">
+        <button class="grid-item" onclick="selectPlay('Curl Left')">
+            Curl Left
         </button>
-        <button class="grid-item" onclick="selectPlay('Curl Right', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlRight.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlRight.JPG" alt="Curl Right">
+        <button class="grid-item" onclick="selectPlay('Curl Right')">
+            Curl Right
         </button>
-        <button class="grid-item" onclick="selectPlay('Curl Straight', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlStraight.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/CurlStraight.JPG" alt="Curl Straight">
+        <button class="grid-item" onclick="selectPlay('Curl Straight')">
+            Curl Straight
         </button>
-        <button class="grid-item" onclick="selectPlay('Long', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/Long.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/Long.JPG" alt="Long">
+        <button class="grid-item" onclick="selectPlay('Long')">
+            Long
         </button>
-        <button class="grid-item" onclick="selectPlay('Slant Left', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SlantLeft.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SlantLeft.JPG" alt="Slant Left">
+        <button class="grid-item" onclick="selectPlay('Slant Left')">
+            Slant Left
         </button>
-        <button class="grid-item" onclick="selectPlay('Slant Right', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SlantRight.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SlantRight.JPG" alt="Slant Right">
+        <button class="grid-item" onclick="selectPlay('Slant Right')">
+            Slant Right
         </button>
-        <button class="grid-item" onclick="selectPlay('Square Left', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SquareLeft.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SquareLeft.JPG" alt="Square Left">
+        <button class="grid-item" onclick="selectPlay('Square Left')">
+            Square Left
         </button>
-        <button class="grid-item" onclick="selectPlay('Square Right', 'https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SquareRight.JPG')">
-            <img src="https://raw.githubusercontent.com/adamron87/tacklin-fuel/main/images/SquareRight.JPG" alt="Square Right">
+        <button class="grid-item" onclick="selectPlay('Square Right')">
+            Square Right
         </button>
     </div>
 
     <script>
-        function selectPlay(playName, imageUrl) {
+        function selectPlay(playName) {
             const payload = {
-                content: `Play selected: ${playName}`,
-                embeds: [{
-                    title: playName,
-                    image: {
-                        url: imageUrl
-                    }
-                }]
+                content: `Play selected: ${playName}`
             };
 
-            console.log('Sending payload to Discord:', payload);
-
-            fetch('https://your-discord-webhook-url', {
+            fetch('https://discord.com/api/webhooks/1245912415514656882/uaRTzqFmQuBSvLbK3Wyp7Uf4H04LJYN5IIIQf4ijuO9Qb_v0kApMtwKy0XAeTh_Xj8kG', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
